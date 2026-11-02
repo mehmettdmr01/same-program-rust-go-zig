@@ -1,6 +1,6 @@
 # Same program in C, Rust, Go and Zig: the measurements
 
-Video: (link coming)
+Video: https://youtu.be/4txLuE-7kcc
 
 Conway's Game of Life, 512x512, 200 generations, wrapping edges, same starting file. Every program must print `alive=18885`; a longer 2,000-generation run must print `alive=8836`. This follows [same-program-14-ways](https://github.com/mehmettdmr01/same-program-14-ways) and corrects it: "NumPy beat plain C" was wrong, my C had a `% N` in the hot loop.
 
