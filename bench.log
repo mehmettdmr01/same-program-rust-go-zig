@@ -1,0 +1,50 @@
+load (2.28759765625, 2.3525390625, 2.46337890625)
+built c_naive 0.068
+built c_fast 0.073
+built c_fast_int 0.073
+built c_naive_O3 0.07
+built c_fast_O3 0.075
+built rust_naive 0.157
+built rust_fast 0.17
+built rust_fast_i32 0.173
+built go_naive 0.109
+built go_fast 0.113
+built go_swar 0.105
+built zig_naive 6.806
+built zig_fast 6.786
+built zig_vector 6.687
+built zig_naive_safe 7.697
+built c_bitpacked 0.07
+round 1
+round 2
+round 3
+round 4
+round 5
+round 6
+round 7
+long round 1
+long round 2
+long round 3
+
+program              sim ms   wall s   sim2000     MB  bin KB  build
+c_bitpacked            3.35   0.0057      34.4    1.6      33   0.07
+rust_fast              5.25   0.0075      53.2    2.3     463   0.17
+c_fast_O3              6.33   0.0082      64.4    2.0      33   0.07
+c_fast                 6.41   0.0083      64.3    2.0      33   0.07
+zig_vector             6.89   0.0092      69.8    2.2     403   6.69
+rust_fast_i32         14.90   0.0170     150.8    2.3     463   0.17
+c_fast_int            17.15   0.0189     173.6    2.0      33   0.07
+go_swar               22.96   0.0264     235.2    4.9    2423   0.10
+numpy_four_rolls      23.22   0.0823     232.9   28.7       0   0.00
+numpy                 58.50   0.1279     582.8   31.9       0   0.00
+zig_fast              65.27   0.0677     660.7    2.2     403   6.79
+go_fast               66.15   0.0695     673.6    5.0    2423   0.11
+zig_naive            205.38   0.2077    1358.9    2.2     403   6.81
+c_naive_O3           230.37   0.2329       0.0    2.0      33   0.07
+c_naive              232.81   0.2348    1568.4    2.0      33   0.07
+go_naive             268.83   0.2721    1950.9    4.9    2423   0.11
+rust_naive           339.57   0.3419    2394.6    2.3     463   0.16
+zig_naive_safe       388.90   0.3913       0.0    2.4     532   7.70
+
+hello: {"c": {"build_s": 0.052, "binary_kb": 32, "start_ms_best": 1.4, "rss_kb": 1232}, "rust": {"build_s": 0.078, "binary_kb": 425, "start_ms_best": 1.7, "rss_kb": 1392}, "go": {"build_s": 0.105, "binary_kb": 2372, "start_ms_best": 2.1, "rss_kb": 4016}, "zig": {"build_s": 6.339, "binary_kb": 387, "start_ms_best": 1.9, "rss_kb": 1440}}
+load after (2.4794921875, 2.52978515625, 2.52490234375)

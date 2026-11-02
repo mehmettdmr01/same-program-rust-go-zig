@@ -1,0 +1,633 @@
+{
+ "machine": "MacBook Air M1 2020, 8 GB",
+ "versions": {
+  "clang": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13) (Homebrew)",
+  "go": "go version go1.27.3 darwin/arm64",
+  "zig": "0.17.0",
+  "numpy": "2.5.4 3.15.2"
+ },
+ "load_before": [
+  2.28759765625,
+  2.3525390625,
+  2.46337890625
+ ],
+ "programs": {
+  "c_naive": {
+   "build_cmd": "clang -O2 -o build/c_naive c/naive.c",
+   "build_s": 0.068,
+   "binary_kb": 33,
+   "times": [
+    0.2348,
+    0.2379,
+    0.2356,
+    0.2452,
+    0.2516,
+    0.2365,
+    0.2526
+   ],
+   "rss_kb": 2048,
+   "sim_ms": [
+    232.814,
+    235.983,
+    233.641,
+    243.301,
+    249.631,
+    234.583,
+    250.683
+   ],
+   "sim_ms_2000": [
+    1589.465,
+    1568.373,
+    1603.198
+   ],
+   "best_s": 0.2348,
+   "median_s": 0.2379,
+   "sim_ms_best": 232.814,
+   "sim_ms_2000_best": 1568.373
+  },
+  "c_fast": {
+   "build_cmd": "clang -O2 -o build/c_fast c/fast.c",
+   "build_s": 0.073,
+   "binary_kb": 33,
+   "times": [
+    0.0084,
+    0.0084,
+    0.0083,
+    0.0086,
+    0.0086,
+    0.0083,
+    0.0087
+   ],
+   "rss_kb": 2048,
+   "sim_ms": [
+    6.409,
+    6.527,
+    6.43,
+    6.703,
+    6.608,
+    6.456,
+    6.744
+   ],
+   "sim_ms_2000": [
+    65.576,
+    64.307,
+    64.603
+   ],
+   "best_s": 0.0083,
+   "median_s": 0.0084,
+   "sim_ms_best": 6.409,
+   "sim_ms_2000_best": 64.307
+  },
+  "c_fast_int": {
+   "build_cmd": "clang -O2 -o build/c_fast_int c/fast_int.c",
+   "build_s": 0.073,
+   "binary_kb": 33,
+   "times": [
+    0.0189,
+    0.0194,
+    0.0192,
+    0.0194,
+    0.0197,
+    0.0194,
+    0.0238
+   ],
+   "rss_kb": 2048,
+   "sim_ms": [
+    17.15,
+    17.479,
+    17.377,
+    17.382,
+    17.507,
+    17.398,
+    21.641
+   ],
+   "sim_ms_2000": [
+    175.13,
+    173.599,
+    176.109
+   ],
+   "best_s": 0.0189,
+   "median_s": 0.0194,
+   "sim_ms_best": 17.15,
+   "sim_ms_2000_best": 173.599
+  },
+  "c_naive_O3": {
+   "build_cmd": "clang -O3 -o build/c_naive_O3 c/naive.c",
+   "build_s": 0.07,
+   "binary_kb": 33,
+   "times": [
+    0.2329,
+    0.2336,
+    0.2356,
+    0.2378,
+    0.2383,
+    0.236,
+    0.263
+   ],
+   "rss_kb": 2048,
+   "sim_ms": [
+    230.372,
+    231.713,
+    233.734,
+    235.794,
+    236.295,
+    234.163,
+    260.689
+   ],
+   "best_s": 0.2329,
+   "median_s": 0.236,
+   "sim_ms_best": 230.372,
+   "sim_ms_2000_best": null
+  },
+  "c_fast_O3": {
+   "build_cmd": "clang -O3 -o build/c_fast_O3 c/fast.c",
+   "build_s": 0.075,
+   "binary_kb": 33,
+   "times": [
+    0.0082,
+    0.0083,
+    0.0087,
+    0.0085,
+    0.0084,
+    0.0082,
+    0.0111
+   ],
+   "rss_kb": 2048,
+   "sim_ms": [
+    6.33,
+    6.36,
+    6.525,
+    6.516,
+    6.478,
+    6.395,
+    8.564
+   ],
+   "sim_ms_2000": [
+    64.777,
+    64.355,
+    65.86
+   ],
+   "best_s": 0.0082,
+   "median_s": 0.0084,
+   "sim_ms_best": 6.33,
+   "sim_ms_2000_best": 64.355
+  },
+  "rust_naive": {
+   "build_cmd": "rustc -C opt-level=3 -o build/rust_naive rust/naive.rs",
+   "build_s": 0.157,
+   "binary_kb": 463,
+   "times": [
+    0.3419,
+    0.3422,
+    0.349,
+    0.3462,
+    0.3498,
+    0.3595,
+    0.3596
+   ],
+   "rss_kb": 2368,
+   "sim_ms": [
+    339.572,
+    339.826,
+    346.619,
+    343.571,
+    347.448,
+    357.129,
+    357.11
+   ],
+   "sim_ms_2000": [
+    2402.296,
+    2394.619,
+    2419.07
+   ],
+   "best_s": 0.3419,
+   "median_s": 0.349,
+   "sim_ms_best": 339.572,
+   "sim_ms_2000_best": 2394.619
+  },
+  "rust_fast": {
+   "build_cmd": "rustc -C opt-level=3 -o build/rust_fast rust/fast.rs",
+   "build_s": 0.17,
+   "binary_kb": 463,
+   "times": [
+    0.0075,
+    0.0076,
+    0.0076,
+    0.0075,
+    0.0077,
+    0.0077,
+    0.0096
+   ],
+   "rss_kb": 2384,
+   "sim_ms": [
+    5.252,
+    5.272,
+    5.3,
+    5.26,
+    5.327,
+    5.352,
+    5.957
+   ],
+   "sim_ms_2000": [
+    53.18,
+    53.153,
+    53.26
+   ],
+   "best_s": 0.0075,
+   "median_s": 0.0076,
+   "sim_ms_best": 5.252,
+   "sim_ms_2000_best": 53.153
+  },
+  "rust_fast_i32": {
+   "build_cmd": "rustc -C opt-level=3 -o build/rust_fast_i32 rust/fast_i32.rs",
+   "build_s": 0.173,
+   "binary_kb": 463,
+   "times": [
+    0.017,
+    0.0178,
+    0.0173,
+    0.0216,
+    0.0176,
+    0.0174,
+    0.0202
+   ],
+   "rss_kb": 2400,
+   "sim_ms": [
+    14.901,
+    15.02,
+    15.075,
+    19.339,
+    15.193,
+    15.163,
+    15.727
+   ],
+   "sim_ms_2000": [
+    150.815,
+    151.135,
+    152.061
+   ],
+   "best_s": 0.017,
+   "median_s": 0.0176,
+   "sim_ms_best": 14.901,
+   "sim_ms_2000_best": 150.815
+  },
+  "go_naive": {
+   "build_cmd": "go build -o build/go_naive go/naive.go",
+   "build_s": 0.109,
+   "binary_kb": 2423,
+   "times": [
+    0.2721,
+    0.2737,
+    0.2742,
+    0.2899,
+    0.2742,
+    0.2736,
+    0.3786
+   ],
+   "rss_kb": 4976,
+   "sim_ms": [
+    268.826,
+    270.36,
+    270.867,
+    285.647,
+    270.801,
+    270.041,
+    374.731
+   ],
+   "sim_ms_2000": [
+    1950.905,
+    1958.194,
+    2038.473
+   ],
+   "best_s": 0.2721,
+   "median_s": 0.2742,
+   "sim_ms_best": 268.826,
+   "sim_ms_2000_best": 1950.905
+  },
+  "go_fast": {
+   "build_cmd": "go build -o build/go_fast go/fast.go",
+   "build_s": 0.113,
+   "binary_kb": 2423,
+   "times": [
+    0.0704,
+    0.0695,
+    0.07,
+    0.0707,
+    0.0702,
+    0.0704,
+    0.0733
+   ],
+   "rss_kb": 5104,
+   "sim_ms": [
+    66.913,
+    66.15,
+    66.698,
+    67.192,
+    66.846,
+    67.052,
+    69.703
+   ],
+   "sim_ms_2000": [
+    673.603,
+    676.792,
+    674.6
+   ],
+   "best_s": 0.0695,
+   "median_s": 0.0704,
+   "sim_ms_best": 66.15,
+   "sim_ms_2000_best": 673.603
+  },
+  "go_swar": {
+   "build_cmd": "go build -o build/go_swar go/swar.go",
+   "build_s": 0.105,
+   "binary_kb": 2423,
+   "times": [
+    0.0264,
+    0.027,
+    0.0268,
+    0.0264,
+    0.0268,
+    0.0264,
+    0.0277
+   ],
+   "rss_kb": 5008,
+   "sim_ms": [
+    23.094,
+    23.222,
+    23.454,
+    23.058,
+    23.546,
+    22.965,
+    24.21
+   ],
+   "sim_ms_2000": [
+    236.377,
+    235.243,
+    239.764
+   ],
+   "best_s": 0.0264,
+   "median_s": 0.0268,
+   "sim_ms_best": 22.965,
+   "sim_ms_2000_best": 235.243
+  },
+  "zig_naive": {
+   "build_cmd": "zig build-exe -O ReleaseFast -femit-bin=build/zig_naive zig/naive.zig",
+   "build_s": 6.806,
+   "binary_kb": 403,
+   "times": [
+    0.2077,
+    0.2082,
+    0.2085,
+    0.2093,
+    0.247,
+    0.2082,
+    0.2393
+   ],
+   "rss_kb": 2304,
+   "sim_ms": [
+    205.383,
+    205.858,
+    206.207,
+    206.944,
+    244.073,
+    205.908,
+    236.891
+   ],
+   "sim_ms_2000": [
+    1364.61,
+    1358.889,
+    1371.133
+   ],
+   "best_s": 0.2077,
+   "median_s": 0.2085,
+   "sim_ms_best": 205.383,
+   "sim_ms_2000_best": 1358.889
+  },
+  "zig_fast": {
+   "build_cmd": "zig build-exe -O ReleaseFast -femit-bin=build/zig_fast zig/fast.zig",
+   "build_s": 6.786,
+   "binary_kb": 403,
+   "times": [
+    0.0699,
+    0.0679,
+    0.0677,
+    0.0681,
+    0.0863,
+    0.0688,
+    0.0697
+   ],
+   "rss_kb": 2288,
+   "sim_ms": [
+    67.479,
+    65.609,
+    65.27,
+    65.671,
+    83.329,
+    65.498,
+    66.612
+   ],
+   "sim_ms_2000": [
+    660.747,
+    663.98,
+    662.691
+   ],
+   "best_s": 0.0677,
+   "median_s": 0.0688,
+   "sim_ms_best": 65.27,
+   "sim_ms_2000_best": 660.747
+  },
+  "zig_vector": {
+   "build_cmd": "zig build-exe -O ReleaseFast -femit-bin=build/zig_vector zig/vector.zig",
+   "build_s": 6.687,
+   "binary_kb": 403,
+   "times": [
+    0.0093,
+    0.0092,
+    0.0093,
+    0.0093,
+    0.0099,
+    0.0092,
+    0.0092
+   ],
+   "rss_kb": 2288,
+   "sim_ms": [
+    6.93,
+    6.927,
+    6.978,
+    7.042,
+    7.112,
+    6.886,
+    6.938
+   ],
+   "sim_ms_2000": [
+    70.304,
+    69.835,
+    71.415
+   ],
+   "best_s": 0.0092,
+   "median_s": 0.0093,
+   "sim_ms_best": 6.886,
+   "sim_ms_2000_best": 69.835
+  },
+  "zig_naive_safe": {
+   "build_cmd": "zig build-exe -O ReleaseSafe -femit-bin=build/zig_naive_safe zig/naive.zig",
+   "build_s": 7.697,
+   "binary_kb": 532,
+   "times": [
+    0.4145,
+    0.3926,
+    0.3913,
+    0.3976,
+    0.4186,
+    0.3925,
+    0.3959
+   ],
+   "rss_kb": 2432,
+   "sim_ms": [
+    411.392,
+    390.172,
+    388.897,
+    395.062,
+    415.04,
+    390.05,
+    393.128
+   ],
+   "best_s": 0.3913,
+   "median_s": 0.3959,
+   "sim_ms_best": 388.897,
+   "sim_ms_2000_best": null
+  },
+  "c_bitpacked": {
+   "build_cmd": "clang -O2 -o build/c_bitpacked c/bitpacked.c",
+   "build_s": 0.07,
+   "binary_kb": 33,
+   "times": [
+    0.0059,
+    0.0061,
+    0.0057,
+    0.0059,
+    0.006,
+    0.0057,
+    0.0068
+   ],
+   "rss_kb": 1600,
+   "sim_ms": [
+    3.503,
+    3.395,
+    3.369,
+    3.463,
+    3.379,
+    3.35,
+    3.374
+   ],
+   "sim_ms_2000": [
+    34.709,
+    34.38,
+    34.641
+   ],
+   "best_s": 0.0057,
+   "median_s": 0.0059,
+   "sim_ms_best": 3.35,
+   "sim_ms_2000_best": 34.38
+  },
+  "numpy": {
+   "build_cmd": "",
+   "build_s": 0,
+   "binary_kb": 0,
+   "times": [
+    0.1285,
+    0.1279,
+    0.1287,
+    0.1392,
+    0.1299,
+    0.1315,
+    0.1324
+   ],
+   "rss_kb": 32704,
+   "sim_ms": [
+    58.504,
+    58.881,
+    59.34,
+    62.911,
+    59.79,
+    62.01,
+    58.894
+   ],
+   "sim_ms_2000": [
+    582.777,
+    596.514,
+    594.386
+   ],
+   "best_s": 0.1279,
+   "median_s": 0.1299,
+   "sim_ms_best": 58.504,
+   "sim_ms_2000_best": 582.777
+  },
+  "numpy_four_rolls": {
+   "build_cmd": "",
+   "build_s": 0,
+   "binary_kb": 0,
+   "times": [
+    0.0843,
+    0.0823,
+    0.0836,
+    0.0824,
+    0.0826,
+    0.0841,
+    0.083
+   ],
+   "rss_kb": 29376,
+   "sim_ms": [
+    24.02,
+    23.22,
+    23.584,
+    23.429,
+    23.764,
+    23.697,
+    24.818
+   ],
+   "sim_ms_2000": [
+    232.89,
+    234.892,
+    272.632
+   ],
+   "best_s": 0.0823,
+   "median_s": 0.083,
+   "sim_ms_best": 23.22,
+   "sim_ms_2000_best": 232.89
+  }
+ },
+ "hello": {
+  "c": {
+   "build_s": 0.052,
+   "binary_kb": 32,
+   "start_ms_best": 1.4,
+   "rss_kb": 1232
+  },
+  "rust": {
+   "build_s": 0.078,
+   "binary_kb": 425,
+   "start_ms_best": 1.7,
+   "rss_kb": 1392
+  },
+  "go": {
+   "build_s": 0.105,
+   "binary_kb": 2372,
+   "start_ms_best": 2.1,
+   "rss_kb": 4016
+  },
+  "zig": {
+   "build_s": 6.339,
+   "binary_kb": 387,
+   "start_ms_best": 1.9,
+   "rss_kb": 1440
+  }
+ },
+ "alive_2000": 8836,
+ "load_after": [
+  2.4794921875,
+  2.52978515625,
+  2.52490234375
+ ]
+}
